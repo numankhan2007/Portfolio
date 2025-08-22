@@ -1,0 +1,208 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/>  <title>Portfolio - NUMAN KHAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: radial-gradient(circle at bottom left, #00e6fe 0%, #1a1f2e 80%);
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #fff;
+        }
+        .container {
+            width: 850px;
+            margin: 60px auto 0 auto;
+            background: #23283a;
+            border-radius: 30px;
+            box-shadow: 0 0 30px #00e6fe30;
+            padding: 45px 55px 60px 55px;
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+        }
+        nav {
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 54px;
+        }
+        nav a {
+            color: #c2c4d4;
+            text-decoration: none;
+            font-size: 1.03em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+        nav a.active, nav a:hover {
+            color: #00e6fe;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.3em;
+            letter-spacing: 0.02em;
+            color: #fff;
+            margin-bottom: 55px;
+        }
+        .hero-content {
+            flex: 1.2;
+            padding-top: 45px;
+        }
+        .hero-content h2 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 0.7em;
+        }
+        .hero-content h1 {
+            font-size: 2.1em;
+            font-weight: bold;
+            margin: 0 0 0.35em 0;
+        }
+        .hero-content h3 {
+            font-size: 1.14em;
+            color: #00e6fe;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            color: #b4b8d5;
+            font-size: 0.97em;
+            margin: 0 0 22px 0;
+            letter-spacing: 0.01em;
+            max-width: 350px;
+        }
+        .details-list {
+            margin-bottom: 20px;
+        }
+        .details-list li {
+            margin-bottom: 7px;
+            color: #b4b8d5;
+            font-size: 0.98em;
+            list-style: none;
+        }
+        .details-list span {
+            color: #00e6fe;
+        }
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 26px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #27314d;
+            color: #00e6fe;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 1.22em;
+            transition: background 0.25s;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: #00e6fe;
+            color: #23283a;
+        }
+        .download-cv {
+            display: inline-block;
+            background: #00e6fe;
+            color: #23283a;
+            border-radius: 22px;
+            padding: 10px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00e6fe60;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s, color 0.25s;
+            margin-top: 8px;
+            text-decoration: none;
+        }
+        .download-cv:hover {
+            background: #04bad1;
+        }
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .circle-bg {
+            background: linear-gradient(135deg, #01d7d5 60%, #01a5a4 100%);
+            border-radius: 50%;
+            padding: 10px;
+            width: 270px;
+            height: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px #00e6fe90;
+        }
+        .hero-image {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #00e6fe80;
+        }
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                width: 95%;
+                padding: 30px 12px;
+                gap: 30px;
+            }
+            nav {
+                position: static;
+                justify-content: center;
+                margin-bottom: 25px;
+            }
+            .hero-content {
+                padding-top: 0;
+            }
+            .hero-image-container {
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <span class="logo">Portfolio.</span>
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Skills</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="hero-content">
+            <h2>Hello, It's Me</h2>
+            <h1>NUMAN KHAN</h1>
+            <h3>And I'm a <span style="color:#00e6fe;">College Student</span></h3>
+            <ul class="details-list">
+                <li><span>Email:</span> m.numankhan2007@gmail.com</li>
+                <li><span>Study:</span> BCA 2nd Year</li>
+            </ul>
+            <p>
+                I’m an enthusiastic learner with a passion for front-end development and creative technology. Driven by curiosity, I enjoy taking on new challenges and turning innovative ideas into reality. Whether it’s collaborating on a project, learning a new language, or solving real-world problems, I strive to grow every single day. Let's connect and build something awesome together!
+            </p>
+            <div class="social-links">
+                <a href="mailto:m.numankhan2007@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/numan-khan-a5396937b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/numankhan2007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <a href="#" class="download-cv">Download CV</a>
+        </div>
+        <div class="hero-image-container">
+            <div class="circle-bg">
+                <img src="/storage/emulated/0/Pictures/Instagram/IMG_20250617_231126_206.webp" alt="Profile Photo" class="hero-image" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
