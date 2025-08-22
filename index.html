@@ -1,127 +1,119 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/>  <title>Portfolio - NUMAN KHAN</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Portfolio - NUMAN KHAN</title>
     <style>
+        html { scroll-behavior: smooth; }
         body {
-            background: radial-gradient(circle at bottom left, #00e6fe 0%, #1a1f2e 80%);
+            background: linear-gradient(135deg, #e7ebfa 0%, #c2d3ef 50%, #bdbde7 100%);
             margin: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
         .container {
             width: 850px;
-            margin: 60px auto 0 auto;
-            background: #23283a;
+            margin: 90px auto 0 auto;
+            background: linear-gradient(135deg, #202642 0%, #273059 65%, #342b53 100%);
             border-radius: 30px;
-            box-shadow: 0 0 30px #00e6fe30;
+            box-shadow:
+                0 0 26px 5px #00e6fe88,
+                0 0 0 3px #8d7bf765;
             padding: 45px 55px 60px 55px;
             display: flex;
             flex-direction: row;
             gap: 60px;
+            z-index: 1;
+            position: relative;
         }
+        .bio-section,
+        .skills-section,
+        .footer-social-section,
+        .contact-section {
+            background: linear-gradient(135deg, #222848 0%, #303867 100%);
+            border-radius: 22px;
+            box-shadow: 0 0 12px #00e6fe24, 0 0 0 2px #8d7bf720;
+            position: relative;
+            z-index: 1;
+        }
+        .bio-section { padding: 36px 30px 32px 30px; margin: 40px auto 0 auto; max-width: 570px;}
+        .skills-section { padding: 34px 30px 32px 30px; margin: 38px auto 0 auto; max-width: 570px;}
+        .footer-social-section { padding: 20px 24px; margin: 46px auto 0 auto; max-width: 570px; background: none; box-shadow: none;}
+        .contact-section { padding: 34px 24px 42px 24px; margin: 0 auto; max-width: 570px; }
         nav {
-            position: absolute;
-            top: 35px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
             display: flex;
+            justify-content: center;
             gap: 54px;
+            align-items: center;
+            z-index: 2;
+            padding: 25px 0;
         }
-        nav a {
-            color: #c2c4d4;
-            text-decoration: none;
-            font-size: 1.03em;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: color 0.2s;
-        }
-        nav a.active, nav a:hover {
-            color: #00e6fe;
-        }
-        .logo {
+        nav .logo {
             font-weight: bold;
             font-size: 1.3em;
             letter-spacing: 0.02em;
-            color: #fff;
-            margin-bottom: 55px;
+            color: #111; /* changed to black */
+            margin-right: 24px;
         }
+        nav a {
+            color: #111; /* changed to black */
+            text-decoration: none;
+            font-size: 1.11em; /* slightly bigger for prominence */
+            font-weight: 600;  /* bolder text */
+            letter-spacing: 0.03em;
+            transition: color 0.2s;
+            position: relative;
+        }
+        nav a.active, nav a:hover {
+            color: #00e6fe;
+            text-shadow: 0 2px 10px #bdfaff55;
+        }
+
         .hero-content {
             flex: 1.2;
             padding-top: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
         }
-        .hero-content h2 {
+        .intro-greeting {
+            color: #79c8ff;
             font-size: 1.15em;
             font-weight: 600;
-            margin-bottom: 0.7em;
+            letter-spacing: 0.06em;
+            margin-bottom: 4px;
         }
-        .hero-content h1 {
-            font-size: 2.1em;
-            font-weight: bold;
-            margin: 0 0 0.35em 0;
+        .intro-name {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #dde7ff;
+            letter-spacing: 0.03em;
         }
-        .hero-content h3 {
-            font-size: 1.14em;
-            color: #00e6fe;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .hero-content p {
-            color: #b4b8d5;
-            font-size: 0.97em;
-            margin: 0 0 22px 0;
-            letter-spacing: 0.01em;
-            max-width: 350px;
-        }
-        .details-list {
-            margin-bottom: 20px;
-        }
-        .details-list li {
-            margin-bottom: 7px;
-            color: #b4b8d5;
-            font-size: 0.98em;
-            list-style: none;
-        }
-        .details-list span {
-            color: #00e6fe;
-        }
-        .social-links {
-            display: flex;
-            gap: 18px;
-            margin-bottom: 26px;
-        }
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #27314d;
-            color: #00e6fe;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            font-size: 1.22em;
-            transition: background 0.25s;
-            text-decoration: none;
-        }
-        .social-links a:hover {
-            background: #00e6fe;
-            color: #23283a;
-        }
-        .download-cv {
+        .intro-role {
             display: inline-block;
-            background: #00e6fe;
-            color: #23283a;
-            border-radius: 22px;
-            padding: 10px 30px;
-            font-size: 1em;
+            background: #273059;
+            color: #b4b8d5;
             font-weight: bold;
-            box-shadow: 0 0 10px #00e6fe60;
-            border: none;
-            cursor: pointer;
-            transition: background 0.25s, color 0.25s;
-            margin-top: 8px;
-            text-decoration: none;
+            font-size: 1em;
+            padding: 14px 28px;
+            border-radius: 12px;
+            box-shadow: 0 0 24px #00e6fe45;
+            margin-bottom: 32px;
+            letter-spacing: 0.08em;
+            text-align: center;
         }
-        .download-cv:hover {
-            background: #04bad1;
+        .intro-description {
+            color: #b4b8d5;
+            font-size: 1.17em;
+            line-height: 1.7;
+            max-width: 420px;
+            margin-bottom: 32px;
         }
         .hero-image-container {
             flex: 1;
@@ -130,7 +122,7 @@
             justify-content: center;
         }
         .circle-bg {
-            background: linear-gradient(135deg, #01d7d5 60%, #01a5a4 100%);
+            background: linear-gradient(135deg, #01d7d5 60%, #7a68ff 100%);
             border-radius: 50%;
             padding: 10px;
             width: 270px;
@@ -138,14 +130,133 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 20px #00e6fe90;
+            box-shadow: 0 0 26px #00e6fe99, 0 0 0 5px #8d7bf7cc;
         }
         .hero-image {
             width: 270px;
             height: 270px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 0 30px #00e6fe80;
+            box-shadow: 0 0 12px #00e6fe66;
+        }
+        .bio-title, .skills-title, .contact-title {
+            font-size: 1.65em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+            letter-spacing: 0.03em;
+            text-align: left;
+            position: relative;
+        }
+        .bio-title::after, .skills-title::after, .contact-title::after {
+            content: '';
+            display: block;
+            width: 132px;
+            height: 5px;
+            margin-top: 8px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #00e6fe 40%, #8d7bf7 100%);
+            opacity: 0.92;
+            animation: underline-glow 2s infinite alternate;
+        }
+        @keyframes underline-glow {
+            0% { box-shadow: 0 0 14px #00e6fe44; }
+            100% { box-shadow: 0 0 28px #00e6fe88;}
+        }
+        .bio-text {
+            color: #b4b8d5;
+            font-size: 1.08em;
+            line-height: 1.8;
+            margin-bottom: 14px;
+            letter-spacing: 0.01em;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .skill-box {
+            background: #232848;
+            padding: 10px 24px;
+            border-radius: 14px;
+            color: #18f1ff;
+            font-weight: 600;
+            font-size: 1.09em;
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+            box-shadow: 0 0 14px #00e6fe33;
+            border: 1.3px solid #52e0ff44;
+            transition: box-shadow .2s, border .2s, transform .2s;
+        }
+        .skill-box:hover {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 0 23px #00e6fe99, 0 0 0 3px #8d7bf7aa;
+            border: 1.5px solid #8d7bf7cc;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 6px;
+        }
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #232848;
+            color: #00e6fe;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.34em;
+            box-shadow: 0 0 10px #1e2c3e79;
+            transition: background 0.25s, color .3s, transform .5s;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            background: #00e6fe;
+            color: #23283a;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 0 28px #00e6fe90;
+        }
+        .contact-info {
+            color: #b4b8d5;
+            font-size: 1.12em;
+            margin-bottom: 18px;
+            margin-left: 4px;
+        }
+        .anim-glow-top, .anim-glow-bottom {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+        .anim-glow-top {
+            top: -80px;
+            width: 510px;
+            height: 140px;
+            background: radial-gradient(circle, #00e6fe66 0%, #7a68ffa1 80%);
+            filter: blur(36px);
+            opacity: 0.4;
+            animation: glowtop 5s linear infinite alternate;
+        }
+        .anim-glow-bottom {
+            bottom: -110px;
+            width: 640px;
+            height: 180px;
+            background: radial-gradient(circle, #00e6fe88 0%, #374cff88 80%);
+            filter: blur(50px);
+            opacity: 0.41;
+            animation: glowbottom 5s linear infinite alternate;
+        }
+        @keyframes glowtop {
+            0% { opacity: 0.4; filter: blur(36px);}
+            100% { opacity: 0.6; filter: blur(54px);}
+        }
+        @keyframes glowbottom {
+            0% { opacity: 0.41; filter: blur(50px);}
+            100% { opacity: 0.64; filter: blur(67px);}
         }
         @media (max-width: 1000px) {
             .container {
@@ -158,52 +269,92 @@
                 position: static;
                 justify-content: center;
                 margin-bottom: 25px;
+                top: 0;
             }
-            .hero-content {
-                padding-top: 0;
+            .hero-content { padding-top: 0; }
+            .hero-image-container { justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            .intro-name { font-size: 2em; }
+            .intro-description { font-size: 1em; max-width: 100%; }
+            .container { padding: 15px 3vw; }
+            .circle-bg, .hero-image { width: 140px; height: 140px; }
+            .bio-section, .skills-section, .footer-social-section, .contact-section {
+                padding: 16px 4vw 18px 4vw;
+                max-width: 100%;
             }
-            .hero-image-container {
-                justify-content: center;
-            }
+        }
+        @media (max-width: 500px) {
+            nav .logo { display: none; }
+            nav { gap: 22px; }
         }
     </style>
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <!-- Animated glows for animatic look -->
+    <div class="anim-glow-top"></div>
+    <div class="anim-glow-bottom"></div>
+    <!-- Navigation at top CENTERED -->
     <nav>
         <span class="logo">Portfolio.</span>
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Skills</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <div class="container">
+
+    <!-- HERO/INTRO Section -->
+    <div class="container" id="home">
         <div class="hero-content">
-            <h2>Hello, I'm</h2>
-            <h1>NUMAN KHAN</h1>
-            <h3>And I'm a <span style="color:#00e6fe;">College Student</span></h3>
-            <ul class="details-list">
-                <li><span>Email:</span> m.numankhan2007@gmail.com</li>
-                <li><span>Study:</span> BCA 2nd Year</li>
-            </ul>
-            <p>
-                I’m an enthusiastic learner with a passion for Computer programing  and creative technology. Driven by curiosity, I enjoy taking on new challenges and turning innovative ideas into reality. Whether it’s collaborating on a project, learning a new language, or solving real-world problems, I strive to grow every single day. Let's connect and build something awesome together!
+            <h2 class="intro-greeting">Hello !!!</h2>
+            <h1 class="intro-name">I'm Numan Khan</h1>
+            <div class="intro-role">Clg Student</div>
+            <p class="intro-description">
+                I’m an enthusiastic learner with a passion for Computer programing and creative technology. Driven by curiosity, I enjoy taking on new challenges and turning innovative ideas into reality. Whether it’s collaborating on a project, learning a new language, or solving real-world problems, I strive to grow every single day. Let's connect and build something awesome together!
             </p>
-            <div class="social-links">
-                <a href="mailto:m.numankhan2007@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/numan-khan-a5396937b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/numankhan2007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://instagram.com/__mr_sung_jin_woo__" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <a href="#" class="download-cv">Download CV</a>
         </div>
         <div class="hero-image-container">
             <div class="circle-bg">
-                <img src="1000060425.jpeg" alt="Profile Photo" class="hero-image" />
+                <img src="" alt="Profile Photo of Numan Khan" class="hero-image" />
             </div>
         </div>
     </div>
+
+    <!-- About / Biography Section -->
+    <section id="about" class="bio-section">
+        <h2 class="bio-title">MY BIOGRAPHY</h2>
+        <p class="bio-text">
+            I'm a student, lifelong learner, and frontend developer who enjoys building clean, accessible interfaces. My focus is on crafting responsive layouts, reusable components, and smooth user experiences.
+        </p>
+        <p class="bio-text">
+            Beyond code, I'm curious about design systems, performance, and how small details shape the way people feel when they use a product.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title">Skills</h2>
+        <div class="skills-list">
+            <span class="skill-box">HTML</span>
+            <span class="skill-box">PYTHON</span>
+            <span class="skill-box">GITHUB</span>
+            <span class="skill-box">MICROSOFT OFFICE</span>
+            <span class="skill-box">MICROSOFT EXCEL</span>
+            <span class="skill-box">MICROSOFT WORD</span>
+        </div>
+    </section>
+
+    <!-- Social Links Footer Section -->
+    <section class="footer-social-section" id="contact">
+        <h2 class="contact-title">Contact</h2>
+        <div class="footer-links">
+            <a href="mailto:m.numankhan2007@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/numan-khan-a5396937b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/numankhan2007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/__mr_sung_jin_woo__" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
 </body>
 </html>
