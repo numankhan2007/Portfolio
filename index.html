@@ -12,11 +12,8 @@
       font-family: 'Poppins', Arial, sans-serif;
       color: #fff;
       min-height: 100vh;
-      /* Original background gradient preserved */
       background: linear-gradient(135deg, #6a11cb 100%);
     }
-
-    /* Navigation */
     nav {
       position: relative;
       top: 0;
@@ -26,7 +23,7 @@
       align-items: center;
       z-index: 10;
       padding: 12px 0;
-      background: rgba(255,255,255,0.18); /* lighter translucent navbar */
+      background: rgba(255,255,255,0.18);
       backdrop-filter: blur(8px);
     }
     nav .logo {
@@ -44,11 +41,10 @@
       transition: color .3s, text-shadow .3s;
     }
     nav a.active, nav a:hover {
-      color: #00e6fe; /* Neon aqua on click/hover */
+      color: #00e6fe;
       text-shadow: 0 0 12px #00e6fe, 0 0 28px #00e6fe88;
     }
 
-    /* Hero Section */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -110,7 +106,6 @@
     }
     .hero-image:hover { transform: scale(1.05) rotate(-3deg); }
 
-    /* Sections with glow boxes */
     section {
       max-width: 900px;
       margin: 60px auto;
@@ -134,7 +129,6 @@
       margin-bottom: 14px;
     }
 
-    /* Skills */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -160,7 +154,6 @@
       box-shadow: 0 0 20px #00e6fe88;
     }
 
-    /* Projects Section */
     .projects-grid {
       display: flex;
       flex-wrap: wrap;
@@ -206,6 +199,7 @@
       gap: 20px;
       margin-top: 18px;
       flex-wrap: wrap;
+      justify-content: flex-start;
     }
     .footer-links a {
       width: 48px;
@@ -218,33 +212,58 @@
       font-size: 1.3em;
       background: rgba(255,255,255,0.15);
       text-decoration: none;
-      box-shadow: 0 0 14px rgba(255,255,255,.2);
+      box-shadow: 0 0 18px #00e6fe80;
       transition: all .3s;
+      position: relative;
     }
     .footer-links a:hover {
       transform: scale(1.15) rotate(-5deg);
       box-shadow: 0 0 26px #fff, 0 0 40px currentColor;
+      background: #00e6fe22;
+      color: #fff;
     }
-    .footer-links a:nth-child(1):hover { background: #d93025; color: #fff; }
-    .footer-links a:nth-child(2):hover { background: #0077b5; color: #fff; }
-    .footer-links a:nth-child(3):hover { background: #24292e; color: #fff; }
-    .footer-links a:nth-child(4):hover { background: #e1306c; color: #fff; }
+    .footer-links a.phone:hover{
+      background: #00e6fe; color: #fff;
+    }
+    .footer-links a:nth-child(2):hover { background: #d93025; color: #fff; }
+    .footer-links a:nth-child(3):hover { background: #0077b5; color: #fff; }
+    .footer-links a:nth-child(4):hover { background: #24292e; color: #fff; }
+    .footer-links a:nth-child(5):hover { background: #e1306c; color: #fff; }
 
-    /* Responsive */
-    @media (max-width: 700px) {
+    .footer-links .phone-label {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      color: #0cd8eb;
+      background: rgba(0,0,0,0.7);
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.92em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .footer-links a.phone:hover .phone-label {
+      opacity: 1;
+    }
+
+    @media (max-width:700px){
       .hero { flex-direction: column; padding: 50px 5%; }
       .intro-name { font-size: 2.3em; }
       .intro-description { font-size: 1em; }
       section { padding: 30px 10px; }
       .projects-grid { flex-direction: column;}
     }
-    @media (max-width: 500px) {
+    @media (max-width:500px){
       nav .logo { display: none; }
       nav { gap: 20px; }
     }
   </style>
+  <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <!-- Navigation -->
@@ -271,7 +290,7 @@
       </p>
     </div>
     <div class="hero-image-container">
-      <img src="1000060425.jpeg" alt="Profile Photo of Numan Khan" class="hero-image" loading="lazy"/>
+      <img src="1000060425.jpeg" alt="Profile Photo of Numan Khan" class="hero-image" loading="lazy" />
     </div>
   </div>
 
@@ -311,11 +330,14 @@
   <section id="contact">
     <h2 class="contact-title">Contact</h2>
     <div class="footer-links">
+      <a class="phone" href="tel:+918610264946" title="Phone">
+        <i class="fas fa-phone"></i>
+        <span class="phone-label">+91 8610264946</span>
+      </a>
       <a href="mailto:m.numankhan2007@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/numan-khan-a5396937b" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/numankhan2007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://instagram.com/__mr_sung_jin_woo__" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <div class="phone-number"><i class="fas fa-phone"></i> +91 8610264946</div>
     </div>
   </section>
 </body>
