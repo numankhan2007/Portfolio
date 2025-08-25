@@ -12,6 +12,7 @@
       font-family: 'Poppins', Arial, sans-serif;
       color: #fff;
       min-height: 100vh;
+      /* Original background gradient preserved */
       background: linear-gradient(135deg, #6a11cb 100%);
     }
 
@@ -25,8 +26,8 @@
       align-items: center;
       z-index: 10;
       padding: 12px 0;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.18); /* lighter translucent navbar */
+      backdrop-filter: blur(8px);
     }
     nav .logo {
       font-weight: bold;
@@ -40,10 +41,10 @@
       text-decoration: none;
       font-size: 1.1em;
       font-weight: 600;
-      transition: color 3s, text-shadow 3s;
+      transition: color .3s, text-shadow .3s;
     }
     nav a.active, nav a:hover {
-      color: #00e6fe; /* 🌊 Neon aqua on click/hover */
+      color: #00e6fe; /* Neon aqua on click/hover */
       text-shadow: 0 0 12px #00e6fe, 0 0 28px #00e6fe88;
     }
 
@@ -57,7 +58,6 @@
       gap: 50px;
     }
     .hero-content { max-width: 500px; }
-
     .intro-greeting {
       font-size: 1.4em;
       font-weight: 700;
@@ -106,6 +106,7 @@
       border: 4px solid #fff;
       box-shadow: 0 0 26px rgba(0,230,254,0.6);
       transition: transform 0.4s;
+      background: #ddd;
     }
     .hero-image:hover { transform: scale(1.05) rotate(-3deg); }
 
@@ -119,8 +120,7 @@
       backdrop-filter: blur(8px);
       box-shadow: 0 0 26px #00e6fe55, 0 0 48px #6a11cb55;
     }
-    /* Glow Headings */
-    .bio-title, .skills-title, .contact-title {
+    .bio-title, .skills-title, .projects-title, .contact-title {
       font-size: 1.8em;
       font-weight: 600;
       margin-bottom: 16px;
@@ -151,8 +151,8 @@
       font-weight: 600;
       font-size: 1.05em;
       color: #0cd8eb;
-      transition: transform .3s, background .3s, box-shadow .3s;
       box-shadow: 0 0 12px #ffffff33;
+      transition: transform .3s, background .3s, box-shadow .3s;
     }
     .skill-box:hover {
       background: #00e6fe33;
@@ -160,7 +160,47 @@
       box-shadow: 0 0 20px #00e6fe88;
     }
 
-    /* Footer / Contact */
+    /* Projects Section */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      min-height: 120px;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-placeholder {
+      width: 100%;
+      text-align: center;
+      color: #e0e0e0;
+      font-size: 1.08em;
+      margin-bottom: 32px;
+      padding: 24px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.09);
+      box-shadow: 0 0 12px #00e6fe33;
+    }
+    .add-project-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1em;
+      font-weight: 600;
+      border-radius: 12px;
+      background: #0cd8eb;
+      color: #111;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 14px #0cd8eb33;
+      transition: background .25s, color .25s, transform .2s;
+      margin-top: 4px;
+    }
+    .add-project-btn:hover {
+      background: #00e6fe;
+      color: #fff;
+      transform: scale(1.07);
+    }
+
+    /* Contact/Footer */
     .footer-links {
       display: flex;
       gap: 20px;
@@ -176,13 +216,12 @@
       justify-content: center;
       color: #0cd8eb;
       font-size: 1.3em;
-      transition: all .3s;
       background: rgba(255,255,255,0.15);
-      text-decoration: none; /* ✨ remove underline */
+      text-decoration: none;
       box-shadow: 0 0 14px rgba(255,255,255,.2);
+      transition: all .3s;
     }
-    /* Glow on hover */
-    .footer-links a:hover { 
+    .footer-links a:hover {
       transform: scale(1.15) rotate(-5deg);
       box-shadow: 0 0 26px #fff, 0 0 40px currentColor;
     }
@@ -196,6 +235,8 @@
       .hero { flex-direction: column; padding: 50px 5%; }
       .intro-name { font-size: 2.3em; }
       .intro-description { font-size: 1em; }
+      section { padding: 30px 10px; }
+      .projects-grid { flex-direction: column;}
     }
     @media (max-width: 500px) {
       nav .logo { display: none; }
@@ -206,13 +247,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- Navigation -->
   <nav>
     <span class="logo">Portfolio.</span>
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -230,7 +271,7 @@
       </p>
     </div>
     <div class="hero-image-container">
-      <img src="1000060425.jpeg" alt="Profile Photo of Numan Khan" class="hero-image" />
+      <img src="1000060425.jpeg" alt="Profile Photo of Numan Khan" class="hero-image" loading="lazy"/>
     </div>
   </div>
 
@@ -252,6 +293,20 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="projects-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-placeholder">
+        No projects added yet.<br>
+        You can use the button below to upload or add project files in the future.
+      </div>
+      <button class="add-project-btn" disabled>
+        + Add Project
+      </button>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <h2 class="contact-title">Contact</h2>
@@ -262,6 +317,5 @@
       <a href="https://instagram.com/__mr_sung_jin_woo__" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </section>
-
 </body>
 </html>
