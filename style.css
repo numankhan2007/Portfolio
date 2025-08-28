@@ -36,7 +36,7 @@ nav a {
 }
 nav a.active, nav a:hover {
   color: #00e6fe;
-  text-shadow: 0 0 12px #00e6fe, 0 0 28px #00e6fe88;
+  text-shadow: 0 0 12px #00e6fe, 0 0 28px #00e6fe;
 }
 
 /* Hero */
