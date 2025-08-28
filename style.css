@@ -36,7 +36,7 @@ nav a {
 }
 nav a.active, nav a:hover {
   color: #00e6fe;
-  text-shadow: 0 0 12px #00e6fe, 0 0 28px #00e6fe;
+  text-shadow: 0 0 12px #00e6fe, 0 0 28px #3d02ed;
 }
 
 /* Hero */
@@ -271,7 +271,7 @@ section {
 .footer-links a:hover {
   transform: scale(1.15) rotate(-5deg);
   box-shadow: 0 0 26px #fff, 0 0 40px currentColor;
-  background: #00e6fe22;
+  background: #00e6fe;
   color: #fff;
 }
 .footer-links a.phone:hover {
