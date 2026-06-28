@@ -52,12 +52,19 @@ const config: Config = {
         "pulse-glow": "pulseGlow 3s ease-in-out infinite",
         "spin-slow": "spin 20s linear infinite",
         "marquee": "marquee 40s linear infinite",
+        shine: "shine 1.5s ease-in-out infinite",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        shine: {
+          "100%": { left: "125%" },
+        },
+      },
+      transitionTimingFunction: {
+        cinematic: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

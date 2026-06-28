@@ -96,13 +96,13 @@ function WebCanvas() {
         const dxm = particles[i].x - mx;
         const dym = particles[i].y - my;
         const distm = Math.sqrt(dxm * dxm + dym * dym);
-        if (distm < 200) {
-          const alpha = (1 - distm / 200) * 0.2;
+        if (distm < 300) {
+          const alpha = (1 - distm / 300) * 0.4;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mx, my);
-          ctx.strokeStyle = `rgba(26, 107, 255, ${alpha})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(230, 36, 41, ${alpha})`;
+          ctx.lineWidth = 1.2;
           ctx.stroke();
         }
       }
@@ -148,20 +148,20 @@ export function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg-deep"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent"
     >
       {/* Particle Web Canvas */}
       <WebCanvas />
 
       {/* Ambient lighting orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-radial from-red-accent/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none animate-float" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-blue-accent/6 via-transparent to-transparent rounded-full blur-3xl pointer-events-none animate-float" style={{ animationDelay: "-3s" }} />
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-radial from-red-accent/15 via-red-accent/5 to-transparent rounded-full blur-[100px] pointer-events-none animate-float mix-blend-screen" />
+      <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-radial from-blue-accent/15 via-blue-accent/5 to-transparent rounded-full blur-[100px] pointer-events-none animate-float mix-blend-screen" style={{ animationDelay: "-3s" }} />
 
       {/* Grid overlay */}
-      <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-subtle opacity-40 pointer-events-none" style={{ transform: "perspective(1000px) rotateX(60deg) scale(2) translateY(20%)" }} />
 
       {/* Bottom gradient fade */}
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bg-deep to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-bg-deep via-bg-deep/80 to-transparent z-10 pointer-events-none" />
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-8 relative z-20">
@@ -203,19 +203,25 @@ export function Hero() {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div variants={staggerItem} className="mt-10 flex flex-wrap gap-4">
+          <motion.div variants={staggerItem} className="mt-12 flex flex-wrap gap-6 items-center">
             <a
               href="#projects"
-              className="btn-liquid"
+              className="group relative px-8 py-4 bg-red-accent text-white font-mono uppercase tracking-widest text-sm rounded hover:bg-red-bright transition-all duration-300 overflow-hidden"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
-              View Projects
+              <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
+              <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine" />
+              <span className="relative z-10 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+                Access Archives
+              </span>
             </a>
+            
             <a
               href="#contact"
-              className="btn-liquid-outline"
+              className="group flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted hover:text-white transition-colors"
             >
-              Get In Touch
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-accent group-hover:animate-pulse-glow" />
+              Initiate Contact
             </a>
           </motion.div>
         </motion.div>

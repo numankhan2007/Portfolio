@@ -6,15 +6,16 @@ import { Projects } from "@/components/sections/Projects";
 import { OpenSource } from "@/components/sections/OpenSource";
 import { Certificates } from "@/components/sections/Certificates";
 import { Contact } from "@/components/sections/Contact";
+import { WorldEnvironment } from "@/components/ui/WorldEnvironment";
 
 export default function Home() {
   return (
-    <>
+    <WorldEnvironment>
       <div className="relative z-10 flex flex-col">
         <Hero />
         
-        {/* We use a solid background for the content below the fold to hide the 3D scene */}
-        <div className="bg-bg-dark border-t border-glass shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+        {/* We remove the opaque background block here so the WorldEnvironment shines through */}
+        <div className="relative z-20">
           <About />
           <Education />
           <Skills />
@@ -24,6 +25,6 @@ export default function Home() {
           <Contact />
         </div>
       </div>
-    </>
+    </WorldEnvironment>
   );
 }
