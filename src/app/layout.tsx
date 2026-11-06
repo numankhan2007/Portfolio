@@ -3,6 +3,7 @@ import { Inter, Cinzel, JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SwarmMotion } from "@/components/effects/SwarmMotion";
 import { identity } from "@/data/contact";
 
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${displayFont.variable} ${jetBrainsMono.variable} font-body antialiased selection:bg-red-accent/30 selection:text-white`}
       >
+        <SwarmMotion />
         <Navbar />
         <main>{children}</main>
         <Footer />

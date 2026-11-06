@@ -377,3 +377,25 @@
     transition-delay: 0s !important;
   }
 }
+
+/* === OPTIONAL SWARM MOTION EFFECT === */
+.swarm-motion-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 420ms ease;
+}
+
+.swarm-motion-canvas[data-active="true"] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swarm-motion-canvas {
+    transition: none;
+  }
+}
