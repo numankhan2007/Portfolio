@@ -1,20 +1,17 @@
-## Gallery Heading source attribution
+## Gallery Heading source
 
-The Canvas 2D renderer is adapted from the Gallery Heading source in
-[Meng To's threeui repository](https://github.com/MengTo/threeui), revision
+This integration uses the supplied Gallery Heading HTML as its renderer:
+
+- `gallery-heading.source.html` is retained unchanged from the verified upstream source.
+- Runtime adaptation changes only the two visible headline strings to `CERTIFICATES` and `ACHIEVEMENTS`.
+- The original Canvas 2D renderer, gradient tile artwork, tile geometry, canvas scaling, labels, and 15.015-second continuous orbit are preserved.
+- The source runs inside a sandboxed iframe with `allow-scripts` only. Removing the iframe releases its document and animation resources.
+- No ThreeUI package or external assets are required.
+
+Upstream: [Meng To / threeui](https://github.com/MengTo/threeui), revision
 `68802d5428071ada5c20db8094b1649e6bb770ed`.
 
-Canonical source file:
+Source file:
 `src/shaders/neuform-isolated/sources/gallery-heading.html`
 
-SHA-256: `8e42d2d5b497` (source revision supplied by the implementation brief).
-
-The local integration retains the Canvas 2D ring projection, tile ordering,
-canvas sizing, and headline compositing. It adapts the headline for the
-Certificates section, replaces the original gradient artwork with a matte
-palette shaded by deterministic procedural noise, changes tile proportions to
-4:3, and changes the clock to hover-driven eased orbit. The source document is
-kept alongside the local wrapper for auditability.
-
-The upstream project is MIT-licensed; its license text is included in
-`THIRD_PARTY_LICENSE.txt`.
+The source project is MIT-licensed; see `THIRD_PARTY_LICENSE.txt`.
