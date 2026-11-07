@@ -1,0 +1,1 @@
+.certificate-gallery-heading{position:relative;width:100%;height:clamp(280px,38vw,520px);min-height:280px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.09);isolation:isolate}.certificate-gallery-heading iframe{display:block;width:100%;height:100%;border:0;background:#000}@media(max-width:640px){.certificate-gallery-heading{height:300px;min-height:300px}}
